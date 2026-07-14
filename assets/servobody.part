@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "a6e7780a1ac54d5d223dfe18",
+    "documentMicroversion": "aae5a1809b68e77bd6511463",
+    "elementId": "81a6a3301417666fa8e5c3d4",
+    "fullConfiguration": "default",
+    "id": "MHLcRleL0decWS6YX",
+    "isStandardContent": false,
+    "name": "ServoBody <13>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}
