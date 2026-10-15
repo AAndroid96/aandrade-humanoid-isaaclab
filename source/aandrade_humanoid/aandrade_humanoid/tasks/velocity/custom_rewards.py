@@ -17,6 +17,8 @@ def feet_clearance(
     sensor_cfg: SceneEntityCfg,
     asset_cfg: SceneEntityCfg,
     target_height: float = 0.05,
+    command_name: str = "base_velocity",
+    command_threshold: float = 0.05,
 ) -> torch.Tensor:
     """Reward swing-foot height, gated so it can't be farmed by falling over.
 
@@ -39,7 +41,12 @@ def feet_clearance(
     foot_height = asset.data.body_pos_w[:, asset_cfg.body_ids, 2]
     clearance = torch.clamp(foot_height / target_height, max=1.0)
     reward = (clearance * (~in_contact).float()).sum(dim=1)
-    return reward * single_support.float() * upright.float()
+    # Gate 4 (v3): only pay while the robot is COMMANDED to move. Without
+    # this, lifting a foot is profitable at zero command, which makes
+    # marching in place strictly better than standing still.
+    cmd = env.command_manager.get_command(command_name)
+    moving = cmd[:, :3].norm(dim=1) > command_threshold
+    return reward * single_support.float() * upright.float() * moving.float()
 
 
 def feet_flat(
@@ -108,3 +115,27 @@ def feet_stance_time(
     moving = cmd[:, :2].norm(dim=1) > 0.05
     return excess * moving.float()
 
+
+# --------------------------------------------------------------------------
+# STAND-STILL (v3)
+# --------------------------------------------------------------------------
+def stand_still(
+    env: "ManagerBasedRLEnv",
+    command_name: str = "base_velocity",
+    asset_cfg: SceneEntityCfg = SceneEntityCfg("robot"),
+    command_threshold: float = 0.05,
+) -> torch.Tensor:
+    """Penalize joint deviation from the default pose while commanded to stand.
+
+    Returns 0 whenever a velocity or yaw command is present, so this never
+    fights the gait. At zero command it pulls every joint back toward the
+    trained crouch, which is what "stand in place" means for this robot.
+
+    Keep the weight modest: too strong and it overrides balance recovery,
+    because catching a push REQUIRES moving away from the default pose.
+    """
+    asset = env.scene[asset_cfg.name]
+    cmd = env.command_manager.get_command(command_name)
+    standing = cmd[:, :3].norm(dim=1) < command_threshold
+    deviation = (asset.data.joint_pos - asset.data.default_joint_pos).abs().sum(dim=1)
+    return deviation * standing.float()

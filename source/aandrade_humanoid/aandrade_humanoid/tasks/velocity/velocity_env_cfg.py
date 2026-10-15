@@ -5,11 +5,13 @@ isaaclab_tasks.manager_based.locomotion.velocity — inherit the template,
 swap the robot, rescale everything for a ~0.7 kg, ~25 cm-tall biped.
 """
 
+from isaaclab.managers import EventTermCfg as EventTerm
 from isaaclab.managers import RewardTermCfg as RewTerm
 from isaaclab.managers import SceneEntityCfg
 from isaaclab.managers import TerminationTermCfg as DoneTerm
 from isaaclab.utils import configclass
 
+from isaaclab.envs.mdp import randomize_actuator_gains
 import isaaclab_tasks.manager_based.locomotion.velocity.mdp as mdp
 from isaaclab_tasks.manager_based.locomotion.velocity.velocity_env_cfg import (
     LocomotionVelocityRoughEnvCfg,
@@ -116,6 +118,7 @@ class AAndradeHumanoidFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
                 "sensor_cfg": SceneEntityCfg("contact_forces", body_names=FEET),
                 "asset_cfg": SceneEntityCfg("robot", body_names=FEET),
                 "target_height": 0.09,
+                "command_name": "base_velocity",
             },
         )
         # Keep the sole parallel to the ground through the whole stride.
@@ -169,6 +172,25 @@ class AAndradeHumanoidFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
                 )
             },
         )
+        # ------------------------------------------------------------------
+        # v3 stand-still (2026-10-14)
+        # ------------------------------------------------------------------
+        # A quarter of the fleet trains on "command is zero, hold still".
+        # Stock is ~2%, which is far too little signal to learn standing.
+        self.commands.base_velocity.rel_standing_envs = 0.25
+
+        # Pay for holding the default crouch at zero command. Modest weight:
+        # catching a push requires leaving the default pose, so this must not
+        # outbid flat_orientation_l2.
+        self.rewards.stand_still = RewTerm(
+            func=custom_rewards.stand_still,
+            weight=-0.5,
+            params={
+                "command_name": "base_velocity",
+                "asset_cfg": SceneEntityCfg("robot"),
+            },
+        )
+
         self.rewards.dof_torques_l2.weight = -2.0e-3   # torques are ~0.1-0.5 N.m here
         self.rewards.dof_acc_l2.weight = -1.0e-7
         self.rewards.action_rate_l2.weight = -0.01
@@ -189,6 +211,47 @@ class AAndradeHumanoidFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
             },
         )
 
+
+
+        # ------------------------------------------------------------------
+        # v2 sim-to-real (2026-10-06)
+        # ------------------------------------------------------------------
+        # 1. Drop base linear velocity. The robot has no sensor for it, so on
+        #    hardware those 3 inputs are fed zeros and the policy reads an
+        #    observation it never saw during training.
+        #    Observation size 54 -> 51. robot_config.py on the Jetson must
+        #    set INCLUDE_BASE_LIN_VEL = False to match.
+        self.observations.policy.base_lin_vel = None
+
+        # 2. Actually randomize ground friction. Upstream pins it at
+        #    (0.8, 0.8) / (0.6, 0.6) -- a fixed value in a range's clothing --
+        #    so v1 only ever learned one surface. Foot friction is the
+        #    dominant contact parameter for a biped.
+        self.events.physics_material.params["static_friction_range"] = (0.4, 1.2)
+        self.events.physics_material.params["dynamic_friction_range"] = (0.3, 1.0)
+
+        # 3. Rescale CoM randomization. Upstream +/- 5 cm is sized for a 1.8 m
+        #    H1. On a 25 cm robot that is a fifth of its height and describes
+        #    a machine that cannot physically exist.
+        if hasattr(self.events, "base_com") and self.events.base_com is not None:
+            self.events.base_com.params["com_range"] = {
+                "x": (-0.01, 0.01), "y": (-0.01, 0.01), "z": (-0.005, 0.005)
+            }
+
+        # 4. Randomize actuator gains. XL330s vary unit to unit, with
+        #    temperature, and with bus voltage -- the real robot runs at
+        #    5.2 V against an actuator model written for 5.0 V.
+        self.events.randomize_actuator_gains = EventTerm(
+            func=randomize_actuator_gains,
+            mode="startup",
+            params={
+                "asset_cfg": SceneEntityCfg("robot", joint_names=".*"),
+                "stiffness_distribution_params": (0.8, 1.2),
+                "damping_distribution_params": (0.8, 1.2),
+                "operation": "scale",
+                "distribution": "uniform",
+            },
+        )
 
 @configclass
 class AAndradeHumanoidFlatEnvCfg_PLAY(AAndradeHumanoidFlatEnvCfg):
