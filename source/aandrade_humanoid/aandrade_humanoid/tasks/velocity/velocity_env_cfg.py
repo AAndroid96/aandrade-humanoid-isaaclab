@@ -22,7 +22,7 @@ from aandrade_humanoid.tasks.velocity import custom_rewards
 
 # Link names from the URDF (onshape-to-robot naming)
 PELVIS = "dc15_a01_adaptor_2_1"
-FEET = ["servobody_4", "servobody_8"]          # left, right foot
+FEET = ["left_foot", "right_foot"]          # left, right foot
 UPPER_LEG_BODIES = ["servohorn.*", "servobody", "servobody_2", "servobody_3",
                     "servobody_5", "servobody_6", "servobody_7"]
 
@@ -177,7 +177,7 @@ class AAndradeHumanoidFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
         # ------------------------------------------------------------------
         # A quarter of the fleet trains on "command is zero, hold still".
         # Stock is ~2%, which is far too little signal to learn standing.
-        self.commands.base_velocity.rel_standing_envs = 0.25
+        self.commands.base_velocity.rel_standing_envs = 0.45
 
         # Pay for holding the default crouch at zero command. Modest weight:
         # catching a push requires leaving the default pose, so this must not

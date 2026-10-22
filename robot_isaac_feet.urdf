@@ -1,0 +1,1290 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="AAndrade-Humanoid-Lite">
+  
+  <link name="dc15_a01_adaptor_2_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1800" />
+      <inertia ixx="6.150e-05" ixy="0" ixz="0" iyy="1.455e-04" iyz="0" izz="1.590e-04" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.018 0.0042 0" rpy="3.14159 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_2_1_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.018 0.0042 0" rpy="3.14159 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.018 0.0042 0" rpy="-3.14159 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_2_1_2_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.018 0.0042 0" rpy="-3.14159 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.018 0.0242 0" rpy="-1.5708 -1.77494e-30 3.14159" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.018 0.0242 0" rpy="-1.5708 -1.77494e-30 3.14159" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 -0.0018 0" rpy="-0 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_2_1_3_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.0018 0" rpy="-0 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.018 0.0242 0" rpy="1.5708 3.56836e-30 2.77556e-16" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_2_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.018 0.0242 0" rpy="1.5708 3.56836e-30 2.77556e-16" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servohorn">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="5.20417e-18 0.0145 -0.02" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="5.20417e-18 0.0145 -0.02" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-8.67362e-19 1.73472e-18 -0.006" rpy="1.5708 -8.22472e-33 3.14159" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-8.67362e-19 1.73472e-18 -0.006" rpy="1.5708 -8.22472e-33 3.14159" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 0 -0.003" rpy="1.97117e-32 8.22472e-33 -5.97019e-31" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_2_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.003" rpy="1.97117e-32 8.22472e-33 -5.97019e-31" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-4.33681e-18 -0.0115 -0.02" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_3_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-4.33681e-18 -0.0115 -0.02" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servobody">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.01 -0.0075 -0.0115" rpy="-6.67948e-16 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_3_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.01 -0.0075 -0.0115" rpy="-6.67948e-16 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="5.55112e-17 -0.0245 -0.0115" rpy="3.14159 -1.90027e-17 -6.42644e-17" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_1_1_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="5.55112e-17 -0.0245 -0.0115" rpy="3.14159 -1.90027e-17 -6.42644e-17" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="4.85723e-17 -0.0275 -0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_4_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="4.85723e-17 -0.0275 -0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servobody_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.0095 -3.46945e-17 -0.046" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_2_1_4_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0095 -3.46945e-17 -0.046" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.0095 -3.46945e-17 -0.046" rpy="1.5708 -1.00572e-29 -1.5708" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_4_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0095 -3.46945e-17 -0.046" rpy="1.5708 -1.00572e-29 -1.5708" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.0095 -2.08167e-17 -0.0115" rpy="3.14159 9.66274e-30 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_1_1_2_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0095 -2.08167e-17 -0.0115" rpy="3.14159 9.66274e-30 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.0075 0.01 -0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_5_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0075 0.01 -0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.0155 -2.77556e-17 -0.031" rpy="-1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_2_1_5_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0155 -2.77556e-17 -0.031" rpy="-1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servohorn_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="-0.034 6.93889e-18 -0.003" rpy="-3.17229e-17 -5.44102e-17 -2.84022e-16" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_5_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.034 6.93889e-18 -0.003" rpy="-3.17229e-17 -5.44102e-17 -2.84022e-16" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 0 -0.003" rpy="2.57305e-32 -0 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_6_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.003" rpy="2.57305e-32 -0 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.02 5.20417e-18 0.0115" rpy="-3.14159 9.91043e-18 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_2_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.02 5.20417e-18 0.0115" rpy="-3.14159 9.91043e-18 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.014 3.46945e-18 0.0115" rpy="2.15184e-18 9.91043e-18 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_3_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.014 3.46945e-18 0.0115" rpy="2.15184e-18 9.91043e-18 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 0 0.023" rpy="9.91043e-18 -1.13174e-16 3.14159" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_7_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.023" rpy="9.91043e-18 -1.13174e-16 3.14159" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.034 1.04083e-17 0.026" rpy="-3.14159 4.46241e-16 1.36613e-16" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_8_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.034 1.04083e-17 0.026" rpy="-3.14159 4.46241e-16 1.36613e-16" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servobody_3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="-0.0475 0.01 -0.0115" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_6_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0475 0.01 -0.0115" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.0245 3.26128e-16 -0.0115" rpy="-1.11847e-15 3.90618e-16 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_1_1_3_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0245 3.26128e-16 -0.0115" rpy="-1.11847e-15 3.90618e-16 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.0305 3.7817e-16 -0.0115" rpy="3.14159 3.90618e-16 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_1_1_4_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0305 3.7817e-16 -0.0115" rpy="3.14159 3.90618e-16 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.0075 0.01 -0.0115" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_7_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0075 0.01 -0.0115" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servohorn_3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.02 -1.73472e-18 0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_4_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.02 -1.73472e-18 0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.014 -1.73472e-18 0.0115" rpy="-2.01629e-29 -6.49372e-30 -1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_5_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.014 -1.73472e-18 0.0115" rpy="-2.01629e-29 -6.49372e-30 -1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="2.77556e-17 0 0.026" rpy="3.14159 -3.49549e-30 1.5708" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_9_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="2.77556e-17 0 0.026" rpy="3.14159 -3.49549e-30 1.5708" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.034 -0.0145 0.0115" rpy="-1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_10_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.034 -0.0145 0.0115" rpy="-1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.034 0.0145 0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_11_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.034 0.0145 0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 -1.73472e-18 -0.003" rpy="-1.82837e-31 4.69024e-32 1.11858e-30" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_12_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -1.73472e-18 -0.003" rpy="-1.82837e-31 4.69024e-32 1.11858e-30" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servobody_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0300" />
+      <inertia ixx="4.250e-06" ixy="0" ixz="0" iyy="9.250e-06" iyz="0" izz="1.300e-05" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="-0.01 -0.0075 -0.0115" rpy="5.89922e-16 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_8_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01 -0.0075 -0.0115" rpy="5.89922e-16 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="left_ankle_roll" type="revolute">
+    <origin xyz="0.034 -0.0115 0.0115" rpy="1.5708 -1.5708 0" />
+    <parent link="servohorn_3" />
+    <child link="servobody_4" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="1.5708" />
+  </joint>
+  
+  <joint name="left_ankle_pitch" type="revolute">
+    <origin xyz="-0.055 5.91541e-16 -2.08167e-17" rpy="-3.14159 9.79214e-16 3.14159" />
+    <parent link="servobody_3" />
+    <child link="servohorn_3" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="1.5708" />
+  </joint>
+  
+  <joint name="left_knee2_pitch" type="revolute">
+    <origin xyz="-0.034 6.93889e-18 6.93889e-18" rpy="3.14159 -5.44102e-17 -2.84022e-16" />
+    <parent link="servohorn_2" />
+    <child link="servobody_3" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="8.65974e-15" />
+  </joint>
+  
+  <joint name="left_knee1_pitch" type="revolute">
+    <origin xyz="-0.0005 -0.0115 -0.0535" rpy="-1.5708 -1.5708 0" />
+    <parent link="servobody_2" />
+    <child link="servohorn_2" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="1.06581e-14" upper="1.5708" />
+  </joint>
+  
+  <joint name="left_leg_yaw" type="revolute">
+    <origin xyz="4.85723e-17 -0.0305 -0.0115" rpy="-1.5708 -1.5708 0" />
+    <parent link="servobody" />
+    <child link="servobody_2" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="1.5708" />
+  </joint>
+  
+  <joint name="left_hip_roll" type="revolute">
+    <origin xyz="3.46945e-18 0.0115 -0.02" rpy="-1.5708 1.5708 0" />
+    <parent link="servohorn" />
+    <child link="servobody" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-0.314159" upper="1.74533" />
+  </joint>
+  
+  <joint name="left_hip_pitch" type="revolute">
+    <origin xyz="0.0295 0.0142 -0.0075" rpy="3.14159 1.5708 0" />
+    <parent link="dc15_a01_adaptor_2_1" />
+    <child link="servohorn" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="2.26893" />
+  </joint>
+  
+  <link name="servohorn_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="8.67362e-19 1.73472e-18 -0.003" rpy="7.95654e-33 -2.38162e-32 9.78212e-28" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_13_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="8.67362e-19 1.73472e-18 -0.003" rpy="7.95654e-33 -2.38162e-32 9.78212e-28" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="8.67362e-19 -0.0145 -0.02" rpy="-1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_14_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="8.67362e-19 -0.0145 -0.02" rpy="-1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="8.67362e-19 1.73472e-18 -0.006" rpy="1.5708 2.38162e-32 -3.14159" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_6_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="8.67362e-19 1.73472e-18 -0.006" rpy="1.5708 2.38162e-32 -3.14159" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 0.0145 -0.02" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_15_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.0145 -0.02" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servobody_5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.01 -0.0075 -0.0115" rpy="-3.63548e-31 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_9_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.01 -0.0075 -0.0115" rpy="-3.63548e-31 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-2.77556e-17 -0.0305 -0.0115" rpy="-1.5708 -1.44858e-30 3.33067e-16" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_16_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-2.77556e-17 -0.0305 -0.0115" rpy="-1.5708 -1.44858e-30 3.33067e-16" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-2.08167e-17 -0.0245 -0.0115" rpy="3.14159 -1.3759e-30 -3.63548e-31" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_1_1_5_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-2.08167e-17 -0.0245 -0.0115" rpy="3.14159 -1.3759e-30 -3.63548e-31" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servobody_6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.01 0.0075 -0.0115" rpy="5.44292e-28 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_10_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.01 0.0075 -0.0115" rpy="5.44292e-28 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="3.46945e-17 -0.0155 -0.031" rpy="-4.85723e-17 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_2_1_6_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="3.46945e-17 -0.0155 -0.031" rpy="-4.85723e-17 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="2.08167e-17 -0.0095 -0.0115" rpy="3.14159 7.41798e-16 4.85723e-17" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_1_1_6_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="2.08167e-17 -0.0095 -0.0115" rpy="3.14159 7.41798e-16 4.85723e-17" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="3.46945e-17 0.0105 -0.046" rpy="1.5708 7.41798e-16 5.45869e-28" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_11_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="3.46945e-17 0.0105 -0.046" rpy="1.5708 7.41798e-16 5.45869e-28" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="3.46945e-17 -0.0095 -0.046" rpy="3.14159 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_2_1_7_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="3.46945e-17 -0.0095 -0.046" rpy="3.14159 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_2_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servohorn_5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="-0.034 0 -0.003" rpy="1.67935e-17 7.69139e-30 3.14159" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_17_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.034 0 -0.003" rpy="1.67935e-17 7.69139e-30 3.14159" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="1.38778e-17 0 0.026" rpy="3.14159 7.82492e-30 3.14159" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_18_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.38778e-17 0 0.026" rpy="3.14159 7.82492e-30 3.14159" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.014 1.73472e-18 0.0115" rpy="-3.14159 -7.04185e-31 -1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_7_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.014 1.73472e-18 0.0115" rpy="-3.14159 -7.04185e-31 -1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.02 1.73472e-18 0.0115" rpy="3.14159 8.792e-31 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_8_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.02 1.73472e-18 0.0115" rpy="3.14159 8.792e-31 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="-0.034 1.73472e-18 0.026" rpy="3.14159 -9.99152e-31 1.5708" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_19_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.034 1.73472e-18 0.026" rpy="3.14159 -9.99152e-31 1.5708" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 -1.73472e-18 -0.003" rpy="9.32199e-34 6.36886e-32 -4.42746e-28" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_20_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -1.73472e-18 -0.003" rpy="9.32199e-34 6.36886e-32 -4.42746e-28" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servobody_7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.0245 -5.97439e-15 -0.0115" rpy="3.14159 2.3818e-25 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_1_1_7_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0245 -5.97439e-15 -0.0115" rpy="3.14159 2.3818e-25 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.0305 -7.43849e-15 -0.0115" rpy="-4.11875e-16 2.3818e-25 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_adaptor_1_1_8_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0305 -7.43849e-15 -0.0115" rpy="-4.11875e-16 2.3818e-25 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_adaptor_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.0475 0.01 -0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_12_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0475 0.01 -0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.0075 0.01 -0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_13_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0075 0.01 -0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servohorn_6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0400" />
+      <inertia ixx="1.091e-05" ixy="0" ixz="0" iyy="8.973e-06" iyz="0" izz="5.773e-06" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.02 -5.20417e-18 0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_9_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.02 -5.20417e-18 0.0115" rpy="1.5708 -1.5708 0" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.034 0.0145 0.0115" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_21_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.034 0.0145 0.0115" rpy="1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.014 -3.46945e-18 0.0115" rpy="3.14159 -3.33009e-16 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+      <material name="dc15_a01_hinge_1_1_10_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.014 -3.46945e-18 0.0115" rpy="3.14159 -3.33009e-16 1.5708" />
+      <geometry>
+        <mesh filename="assets/dc15_a01_hinge_1_1.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 0 -0.003" rpy="-2.31333e-33 3.7981e-32 1.40165e-27" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_22_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.003" rpy="-2.31333e-33 3.7981e-32 1.40165e-27" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0 -1.04083e-17 0.026" rpy="-3.14159 3.33009e-16 -1.5708" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_23_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -1.04083e-17 0.026" rpy="-3.14159 3.33009e-16 -1.5708" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="0.034 -0.0145 0.0115" rpy="-1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+      <material name="servohorn_24_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.034 -0.0145 0.0115" rpy="-1.5708 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servohorn.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="servobody_8">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0300" />
+      <inertia ixx="4.250e-06" ixy="0" ixz="0" iyy="9.250e-06" iyz="0" izz="1.300e-05" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="-0.01 -0.0075 -0.0115" rpy="3.84651e-16 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+      <material name="servobody_14_material">
+        <color rgba="0.796078 0.823529 0.937255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01 -0.0075 -0.0115" rpy="3.84651e-16 1.5708 0" />
+      <geometry>
+        <mesh filename="assets/servobody.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="right_ankle_roll" type="revolute">
+    <origin xyz="0.034 0.0115 0.0115" rpy="-1.5708 1.5708 0" />
+    <parent link="servohorn_6" />
+    <child link="servobody_8" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="1.5708" />
+  </joint>
+  
+  <joint name="right_ankle_pitch" type="revolute">
+    <origin xyz="0.055 -1.34233e-14 -1.45717e-16" rpy="3.14159 -2.40213e-16 -2.44096e-13" />
+    <parent link="servobody_7" />
+    <child link="servohorn_6" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="1.5708" />
+  </joint>
+  
+  <joint name="right_knee2_pitch" type="revolute">
+    <origin xyz="-0.034 1.73472e-18 -2.22045e-16" rpy="-3.14159 7.69139e-30 3.14159" />
+    <parent link="servohorn_5" />
+    <child link="servobody_7" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="0" upper="1.5708" />
+  </joint>
+  
+  <joint name="right_knee1_pitch" type="revolute">
+    <origin xyz="0.0115 0.0005 -0.0535" rpy="5.45771e-28 -1.5708 0" />
+    <parent link="servobody_6" />
+    <child link="servohorn_5" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="0" />
+  </joint>
+  
+  <joint name="right_leg_yaw" type="revolute">
+    <origin xyz="-2.77556e-17 -0.0305 -0.0115" rpy="-1.5708 -1.44858e-30 3.33067e-16" />
+    <parent link="servobody_5" />
+    <child link="servobody_6" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.5708" upper="1.5708" />
+  </joint>
+  
+  <joint name="right_hip_roll" type="revolute">
+    <origin xyz="8.67362e-19 -0.0115 -0.02" rpy="1.5708 -1.5708 0" />
+    <parent link="servohorn_4" />
+    <child link="servobody_5" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-1.74533" upper="0.314159" />
+  </joint>
+  
+  <joint name="right_hip_pitch" type="revolute">
+    <origin xyz="-0.0295 0.0142 -0.0075" rpy="3.33125e-16 1.5708 0" />
+    <parent link="dc15_a01_adaptor_2_1" />
+    <child link="servohorn_4" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.52" velocity="10.5" lower="-2.26893" upper="1.5708" />
+  </joint>
+
+  <!-- foot plates, added by add_feet.py -->
+
+  <link name="left_foot">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.0070"/>
+      <inertia ixx="2.109e-06" ixy="0" ixz="0" iyy="8.517e-07" iyz="0" izz="2.942e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="+0.038000 +0.060000 +0.004000"/></geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="+0.038000 +0.060000 +0.004000"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="left_foot_fixed" type="fixed">
+    <origin xyz="+0.000000 -0.026500 +0.003500" rpy="-1.570795 +0.000010 -0.000000"/>
+    <parent link="servobody_4"/>
+    <child link="left_foot"/>
+  </joint>
+
+  <link name="right_foot">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.0070"/>
+      <inertia ixx="2.109e-06" ixy="0" ixz="0" iyy="8.517e-07" iyz="0" izz="2.942e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="+0.038000 +0.060000 +0.004000"/></geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="+0.038000 +0.060000 +0.004000"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="right_foot_fixed" type="fixed">
+    <origin xyz="-0.000000 -0.026500 +0.003500" rpy="-1.570795 +0.000000 -0.000007"/>
+    <parent link="servobody_8"/>
+    <child link="right_foot"/>
+  </joint>
+
+</robot>
