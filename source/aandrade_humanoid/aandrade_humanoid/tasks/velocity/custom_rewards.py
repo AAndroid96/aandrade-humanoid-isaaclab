@@ -139,3 +139,21 @@ def stand_still(
     standing = cmd[:, :3].norm(dim=1) < command_threshold
     deviation = (asset.data.joint_pos - asset.data.default_joint_pos).abs().sum(dim=1)
     return deviation * standing.float()
+
+
+def feet_air_time_cap(
+    env,
+    sensor_cfg,
+    threshold: float = 0.5,
+):
+    """Penalize a foot staying airborne longer than ``threshold`` seconds.
+
+    The mirror of :func:`feet_stance_time`, which had no swing-phase
+    counterpart. Without this, ``feet_air_time_positive_biped`` pays its
+    clamped maximum for as long as the robot holds single support, so
+    parking one leg in the air is a stable local optimum worth more than
+    attempting a step. Returns a positive quantity; use a negative weight.
+    """
+    sensor = env.scene.sensors[sensor_cfg.name]
+    air = sensor.data.current_air_time[:, sensor_cfg.body_ids]
+    return torch.clamp(air - threshold, min=0.0).sum(dim=1)

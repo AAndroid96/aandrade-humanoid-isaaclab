@@ -82,7 +82,7 @@ class AAndradeHumanoidFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
         # ------------------------------------------------------------------
         self.rewards.feet_air_time = RewTerm(
             func=mdp.feet_air_time_positive_biped,
-            weight=2.0,
+            weight=0.5,
             params={
                 "command_name": "base_velocity",
                 "sensor_cfg": SceneEntityCfg("contact_forces", body_names=FEET),
@@ -113,11 +113,11 @@ class AAndradeHumanoidFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
         # Pay for actually lifting feet during swing: anti-ankle-shuffle.
         self.rewards.feet_clearance = RewTerm(
             func=custom_rewards.feet_clearance,
-            weight=0.75,
+            weight=0.30,
             params={
                 "sensor_cfg": SceneEntityCfg("contact_forces", body_names=FEET),
                 "asset_cfg": SceneEntityCfg("robot", body_names=FEET),
-                "target_height": 0.09,
+                "target_height": 0.035,
                 "command_name": "base_velocity",
             },
         )
@@ -158,6 +158,18 @@ class AAndradeHumanoidFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
         )
         # Keep legs in the sagittal plane: penalize yaw/roll joint deviation
         # from default so stepping is done with the pitch joints.
+        # A foot airborne past 0.5s gets expensive -> the swing-phase mirror
+        # of feet_stance_time. Closes the "park one leg in the air and farm
+        # feet_air_time forever" local optimum.
+        self.rewards.feet_air_time_cap = RewTerm(
+            func=custom_rewards.feet_air_time_cap,
+            weight=-1.0,
+            params={
+                "sensor_cfg": SceneEntityCfg("contact_forces", body_names=FEET),
+                "threshold": 0.5,
+            },
+        )
+
         self.rewards.joint_deviation_yaw = RewTerm(
             func=mdp.joint_deviation_l1,
             weight=-0.3,
@@ -194,7 +206,7 @@ class AAndradeHumanoidFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
         self.rewards.dof_torques_l2.weight = -2.0e-3   # torques are ~0.1-0.5 N.m here
         self.rewards.dof_acc_l2.weight = -1.0e-7
         self.rewards.action_rate_l2.weight = -0.01
-        self.rewards.track_lin_vel_xy_exp.weight = 1.5
+        self.rewards.track_lin_vel_xy_exp.weight = 2.0
         self.rewards.track_ang_vel_z_exp.weight = 0.75
         self.rewards.lin_vel_z_l2.weight = -1.0
 
