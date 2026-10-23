@@ -9,6 +9,7 @@ is policies/<run>/params/env.yaml from the training run.
 """
 
 import glob
+import os
 
 # ---------------------------------------------------------------------------
 # JOINT ORDER — verified 2026-07-26 against the trained environment
@@ -186,7 +187,7 @@ IMU_MAX_CONSECUTIVE_FAILURES = 10
 # automatically follows whatever we open the port at. No firmware config.
 # ---------------------------------------------------------------------------
 DXL_BAUDRATE = 1000000        # all XL330s set to 1 Mbps in July
-POLICY_PATH = "~/aandrade-humanoid-isaaclab/policies/v5_gait/exported/policy.onnx"
+POLICY_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "policies/v5_gait/exported/policy.onnx")
 CONTROL_HZ = 50.0
 
 
